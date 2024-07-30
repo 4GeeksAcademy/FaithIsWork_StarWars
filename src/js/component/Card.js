@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import Rigo from "../../img/Rigo.jpg"
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const Card = ({ character }) => {
     const { store, actions } = useContext(Context)
@@ -17,7 +18,9 @@ export const Card = ({ character }) => {
                  <p className= "skin">Skin Color: {character.skin_color}</p>
                  <p className="eyecolor">Eye Color: {character.eye_color}</p>
                 <p className="DOB">DOB: {character.birth_year}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <Link to={`/details/${character.name}`} state={character}>
+                    <button className="btn btn-primary">Leran more!</button>
+                </Link>
                 <button className="btn btn-primary float-end "onClick={(e) => actions.handleClick(character)} > <i class="far fa-heart"></i></button>
         
             </div>

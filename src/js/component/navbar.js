@@ -5,11 +5,11 @@ import { Context } from "../store/appContext";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context)
 	return (
-		<nav className="navbar navbar-light bg-light mb-3 py-4">
+		<nav className="navbar navbar-light mb-3 py-2 bg-transparent sticky-top ">
 			<Link className="navbar-brand" to="/">
-				<img src={Logo_Star_Wars} alt="star wars logo" width="10%" height="20%" className="p-1 mx-5" />
+				<img src={Logo_Star_Wars} alt="star wars logo" width="10%" height="20%" className="p-1 mx-5 bg-light" />
 			</Link>
-			<div className="dropdown">
+			<div className="dropdown mx-3">
 				<button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 					Dropdown button
 					<span>{store.favorites.length != 0 && store.favorites.length}</span>
@@ -19,7 +19,7 @@ export const Navbar = () => {
 						return (
 							<li>
 								{favorite.name}
-								<button className="remove bg-danger" onClick={() => actions.handleDelete(favorite.name)}><i class="fas fa-trash"></i></button>
+								<button className="remove bg-danger mr-2" onClick={() => actions.handleDelete(favorite.name)}><i class="fas fa-trash"></i></button>
 							</li>
 						
 						)

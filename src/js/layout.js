@@ -3,12 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-
-import { Single } from "./views/single";
+import { Star_Wars_Details } from "../js/views/Star_Wars_Details";
+import {Vehicles_Detail} from "./views/Vehicles_detail";
+import { Mars_Details } from "./views/Mars-Details";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -22,9 +24,10 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Routes>
-						<Route path="/" element={<Home />}/>
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="/" element={<Home />} />
+						<Route path="/details/:id" element={<Star_Wars_Details />} />
+						<Route path="/vehicles/:name" element={<Vehicles_Detail/> }/>
+						<Route path="/planets/:details" element={<Mars_Details/> } />
 					</Routes>
 					<Footer />
 				</ScrollToTop>

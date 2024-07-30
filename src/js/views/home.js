@@ -10,7 +10,7 @@ export const Home = () => {
 	console.log(store.vehicles)
 	return (
 
-		<div className="text-danger my-3 mx-4 bold align-items ">
+		<div className="text-danger my-3 mx-4 bold align-items  ">
 			<h1 classsName="text-danger">Characters</h1>
 			<div className="container d-flex overflow-scroll">
 
