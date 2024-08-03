@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import { Card } from "../component/Card";
-import { Vehicles } from "../component/Vehicles";
-import {Planets} from "../component/Planets";
+import { Card } from "../component/Card.jsx";
+import { Vehicles } from "../component/Vehicles.jsx";
+import {Planets} from "../component/Planets.jsx";
 export const Home = () => {
 	const { store, actions } = useContext(Context)
 	console.log(store.people)
